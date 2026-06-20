@@ -19,8 +19,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to="/add" replace />} />
           <Route path="/add" element={<Add url={url} />} />
-          <Route path="/List" element={<List url={url} />} />
-          <Route path="/Orders" element={<Orders url={url} />} />
+          <Route path="/list" element={<List url={url} />} />
+          <Route path="/orders" element={<Orders url={url} />} />
         </Routes>
       </div>
     </div>
