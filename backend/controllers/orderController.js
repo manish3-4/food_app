@@ -3,9 +3,7 @@ import userModel from "../models/userModel.js";
 import Stripe from "stripe";
 
 // Initialize Stripe with your secret key
-const stripe = new Stripe(
-  process.env.STRIPE_SECRET_KEY
-);
+const stripe = new Stripe({password: process.env.STRIPE_SECRET_KEY});
 
 // Place the Order from the user from the Front end
 const placeOrder = async (req, res) => {

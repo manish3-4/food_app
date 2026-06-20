@@ -29,7 +29,7 @@ app.use("/api/order", orderRouter);
 
 // Root route
 app.get("/", (req, res) => {
-    res.send("Server is working successfully.");
+    res.json({ message: "Welcome to the Food Ordering API" });
 });
 
 // Start server
