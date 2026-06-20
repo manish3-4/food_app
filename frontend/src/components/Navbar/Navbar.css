@@ -1,0 +1,177 @@
+.navbar{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar .logo{
+    width: 150px;
+}
+.navbar-menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18 ;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+.navbar button{
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius:50px ;
+    cursor: pointer;
+    transition: 0.4s;
+
+}
+.navbar button:hover{
+    background-color: #fff4f2;
+}
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e ;
+}
+.navbar li{
+    cursor: pointer;
+
+}
+.navbar-search-icon{
+    position: relative;
+}
+.navbar-search-icon .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato ;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}  
+.navbar-profile{
+    position: relative;
+     /* Ensure that it doesn't disrupt the layout */
+}
+
+.nav-profile-dropdown{
+    position: absolute;
+    display: none; /* Initially hidden */
+    
+    right: 0;
+    
+    /* Adds shadow for better visibility */
+    z-index: 1;
+    
+    
+}
+
+/* Show the dropdown when hovering over the profile section */
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add space between items */
+    background-color: #fff2ef; /* Light background to match design */
+    padding: 12px 25px;border-radius: 4px; /* Optional: for rounded corners */
+    border: 1px solid tomato; /* Border to match your design */
+    outline: 2px solid white; /* Adds an outline for contrast */
+    list-style: none; /* Remove bullet points */
+
+}
+
+
+
+/* Styling for the dropdown items */
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+ 
+    cursor: pointer; /* Makes the items clickable */
+}
+.nav-profile-dropdown img{
+    width: 20px;
+}
+.nav-profile-dropdown li:hover{
+    color: tomato;
+}
+
+
+
+
+/* Mobile devices (max-width: 599px) */
+@media (max-width: 599px) {
+    .navbar .logo {
+        width: 80px; /* Smaller logo for phones */
+    }
+
+    .navbar-menu {
+        display: none; /* Hide the menu on small screens */
+    }
+
+    .navbar-right {
+        gap: 10px; /* Reduce spacing between items */
+    }
+
+    .navbar-right img {
+        width: 18px; /* Smaller icon size for phones */
+    }
+
+    .navbar-right button {
+        padding: 5px 15px;
+        font-size: 13px; /* Smaller button for phones */
+    }
+}
+
+/* Medium devices (min-width: 600px) and (max-width: 899px) */
+@media (min-width: 600px) and (max-width: 899px) {
+    .navbar .logo {
+        width: 100px; /* Adjust logo size for tablets */
+    }
+
+    .navbar-menu {
+        display: none; /* Still hidden on tablets */
+    }
+
+    .navbar-right img {
+        width: 20px;
+    }
+
+    .navbar-right button {
+        padding: 6px 18px;
+        font-size: 14px;
+    }
+}
+
+/* Larger devices (min-width: 900px) */
+@media (min-width: 900px) {
+    .navbar .logo {
+        width: 120px; /* Larger logo for desktops */
+    }
+
+    .navbar-menu {
+        display: flex; /* Show menu on large screens */
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .navbar-right {
+        gap: 20px;
+    }
+
+    .navbar-right img {
+        width: 20px;
+    }
+
+    .navbar-right button {
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}

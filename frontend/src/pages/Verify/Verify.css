@@ -1,0 +1,27 @@
+.verify {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f4f6; /* Light background color for the container */
+}
+
+.verify .spinner {
+    width: 80px;
+    height: 80px;
+    border: 5px solid #e0e0e0;
+    border-top-color: #ff6347; /* Tomato color for the rotating border */
+    background-color: #ffffff; /* Background color for the spinner */
+    border-radius: 50%;
+    animation: rotate 0.8s linear infinite;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

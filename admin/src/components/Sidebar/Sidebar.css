@@ -1,0 +1,96 @@
+:root {
+    --sidebar-width: 18%;
+    --border-color: #a9a9a9;
+    --bg-color: #f9f9f9;
+    --hover-bg-color: #e6e6e6;
+    --active-bg-color: tomato;
+    --active-text-color: white;
+    --hover-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --transition-duration: 0.3s;
+    --gap: 20px;
+    --padding: 10px 15px;
+}
+
+.sidebar {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    border: 1.5px solid var(--border-color);
+    border-top: 0;
+    font-size: clamp(10px, 1vw, 16px); /* Clamp for better font scaling */
+    transition: width var(--transition-duration) ease;
+}
+
+.sidebar-options {
+    padding-top: 50px;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.sidebar-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border-color);
+    border-right: none;
+    padding: var(--padding);
+    border-radius: 3px 0 0 3px;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    transition: background-color var(--transition-duration) ease, box-shadow var(--transition-duration) ease;
+}
+
+.sidebar-option:hover,
+.sidebar-option.active {
+    background-color: var(--hover-bg-color); /* Hover background color */
+    box-shadow: var(--hover-box-shadow); /* Common hover shadow */
+}
+
+.sidebar-option.active {
+    background-color: var(--active-bg-color); /* Active state background */
+    color: var(--active-text-color); /* Active state text color */
+    border-left: none;
+}
+
+/* Media queries for responsive design */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 30%;
+        font-size: clamp(12px, 2vw, 18px); /* Improved scaling */
+    }
+
+    .sidebar-options {
+        padding-left: 10%;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 40%;
+        font-size: clamp(14px, 3vw, 20px); /* Font adjusts for smaller screens */
+    }
+
+    .sidebar-options {
+        padding-left: 5%;
+    }
+
+    .sidebar-option {
+        padding: 8px 10px; /* Adjust padding for smaller screens */
+        gap: 10px;
+    }
+}
+
+/* Media query for very small mobile screens */
+@media (max-width: 360px) {
+    .sidebar {
+        width: 50%; /* Further adjustment for tiny screens */
+    }
+
+    .sidebar-option {
+        font-size: clamp(12px, 3vw, 16px); /* Even smaller font scaling */
+    }
+}
