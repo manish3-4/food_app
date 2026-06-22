@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 export const connectDb =  async ()=>{
-    await mongoose.connect('mongodb+srv://manislpuhp_db_user:pTjAvEH7CCP5ogTo@cluster0.hcc8k7q.mongodb.net/?appName=Cluster0').then(()=>console.log("!!!    Db Connected Suceessfully    |||"));
+    const connection_url = process.env.MONGO_URL;
+    await mongoose.connect(connection_url).then(()=>console.log("!!!    Db Connected Suceessfully    |||"));
 
 }
