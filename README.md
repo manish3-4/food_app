@@ -51,12 +51,6 @@
 
 ---
 
-## 📸 Preview Screens
-
-> _(Add screenshots here showing: Homepage, Menu, Cart, Payment, Admin Panel, Order History)_
-
----
-
 ## 🧑‍💻 For Developers
 
 If you're looking to learn:
@@ -81,29 +75,26 @@ Connect on [GitHub](https://github.com/manish3-4)
 This project is licensed under the MIT License. Feel free to fork it, improve it, and share it with your own twist!
 
 ---
-<img width="940" height="457" alt="image" src="https://github.com/user-attachments/assets/e0824577-6701-417d-9406-d2e8326f0dab" />
+
+## 📸 Preview Screens
+
+> _(Add screenshots here showing: Homepage, Menu, Cart, Payment, Admin Panel, Order History)_
+
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/image.png" />
 <br/>
-<img width="940" height="490" alt="image" src="https://github.com/user-attachments/assets/8080d2fb-b0d4-4faf-97ac-845f7b457aca" />
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/Screenshot 2026-06-21 010007.png" />
 <br/>
-<img width="940" height="456" alt="image" src="https://github.com/user-attachments/assets/0566e3a6-bad1-4555-bd82-88fe9bab9b99" />
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/Screenshot 2026-06-21 010149.png" />
 <br/>
-<img width="728" height="639" alt="image" src="https://github.com/user-attachments/assets/c44d1e38-25f5-4fe8-ac62-157839e34aee" />
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/Screenshot 2026-06-21 010226.png" />
 <br/>
-<img width="609" height="658" alt="image" src="https://github.com/user-attachments/assets/ec6569b5-fe7f-4316-aa62-8a8e4e0aab70" />
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/Screenshot 2026-06-21 010243.png" />
 <br/>
-<img width="940" height="456" alt="image" src="https://github.com/user-attachments/assets/63549ee5-dbb4-4010-b13a-6359df62dcb0" />
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/Screenshot 2026-06-21 010331.png" />
 <br/>
-<img width="940" height="467" alt="image" src="https://github.com/user-attachments/assets/dd119b9b-4747-4588-9a44-af507ee4095b" />
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/Screenshot 2026-06-21 010534.png" />
 <br/>
-<img width="940" height="532" alt="image" src="https://github.com/user-attachments/assets/78b570c4-595a-4307-9db6-d71db2b286e1" />
+<img width="940" height="457" alt="image" src="./frontend/src/assets/screenshots/Screenshot 2026-06-21 011021.png" />
 <br/>
-Admin Panel
-<img width="940" height="580" alt="image" src="https://github.com/user-attachments/assets/b7b83882-e953-4314-9f18-c0e0f2436159" />
-<br>
-<img width="940" height="440" alt="image" src="https://github.com/user-attachments/assets/4ec068eb-ca58-44d3-939b-ff937406bd90" />
-<br>
-<img width="940" height="461" alt="image" src="https://github.com/user-attachments/assets/a6a31ed3-1a89-4944-8186-0357dd48b256" />
-<br/>
-<img width="940" height="503" alt="image" src="https://github.com/user-attachments/assets/0b9fe28d-767f-4ab1-a1ad-4c9694513774" />
-<br/>
+
 > “Built to satisfy your hunger — digitally and deliciously.” 🍕🛵
