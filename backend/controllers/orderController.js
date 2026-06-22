@@ -7,7 +7,7 @@ const stripe = new Stripe({password: process.env.STRIPE_SECRET_KEY});
 
 // Place the Order from the user from the Front end
 const placeOrder = async (req, res) => {
-  const frontend_url = process.env.FRONTEND_URL || "http://localhost:5173";
+  const frontend_url = process.env.FRONTEND_URL || "http://localhost:5173"; // Fallback to localhost if FRONTEND_URL is not set
 
   try {
     const { userId, items, amount, address } = req.body;
