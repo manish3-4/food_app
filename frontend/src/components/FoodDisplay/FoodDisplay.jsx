@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import './FoodDisplay.css';
+import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
-import Fooditem from '../Fooditem/FoodItem'
+import Fooditem from "../Fooditem/FoodItem";
+import { Link } from "react-router-dom";
+import Prototype from "prop-types";
 
-const FoodDisplay = ( {category } ) => { // Destructure category from props
+const FoodDisplay = ({ category }) => {
+  // Destructure category from props
   const { food_list } = useContext(StoreContext);
-
- 
 
   return (
     <div className="food-display" id="food-display">
@@ -30,8 +31,15 @@ const FoodDisplay = ( {category } ) => { // Destructure category from props
           return null; // Added this to avoid returning undefined from the map function
         })}
       </div>
+      <Link to="/cart">
+        <button className="cart-btn">View Cart</button>
+      </Link>
     </div>
   );
+};
+
+FoodDisplay.propTypes = {
+  category: Prototype.string.isRequired,
 };
 
 export default FoodDisplay;

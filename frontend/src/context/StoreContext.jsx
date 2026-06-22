@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 export const StoreContext = createContext(null);
 
@@ -14,7 +15,7 @@ const StoreContextProvider = ({ children }) => {
     return localStorage.getItem("token") || "";
   });
   const [food_list, setFoodList] = useState([]);
-  const url = import.meta.env.VITE_BACKEND_URL; // Ensure your backend is running on this
+  const url = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000"; // Ensure your backend is running on this
 
   // Update localStorage whenever cartItems change
   useEffect(() => {
@@ -30,12 +31,19 @@ const StoreContextProvider = ({ children }) => {
 
   // Add item to cart
   const addToCart = async (itemId) => {
-    const updatedCart = { ...cartItems, [itemId]: (cartItems[itemId] || 0) + 1 };
+    const updatedCart = {
+      ...cartItems,
+      [itemId]: (cartItems[itemId] || 0) + 1,
+    };
     setCartItems(updatedCart);
 
     if (token) {
       try {
-        await axios.post(`${url}/api/cart/add`, { itemId }, { headers: { token } });
+        await axios.post(
+          `${url}/api/cart/add`,
+          { itemId },
+          { headers: { token } },
+        );
       } catch (error) {
         console.error("Error adding to cart:", error);
       }
@@ -53,7 +61,11 @@ const StoreContextProvider = ({ children }) => {
 
       if (token) {
         try {
-          await axios.post(`${url}/api/cart/remove`, { itemId }, { headers: { token } });
+          await axios.post(
+            `${url}/api/cart/remove`,
+            { itemId },
+            { headers: { token } },
+          );
         } catch (error) {
           console.error("Error removing from cart:", error);
         }
@@ -87,7 +99,11 @@ const StoreContextProvider = ({ children }) => {
   const loadCartData = async () => {
     if (!token) return; // Don't fetch cart if token is not available
     try {
-      const response = await axios.post(`${url}/api/cart/get`, {}, { headers: { token } });
+      const response = await axios.post(
+        `${url}/api/cart/get`,
+        {},
+        { headers: { token } },
+      );
       setCartItems(response.data.cartData || {}); // Handle the case if no cartData is returned
     } catch (error) {
       console.error("Error loading cart data:", error);
@@ -125,3 +141,7 @@ const StoreContextProvider = ({ children }) => {
 };
 
 export default StoreContextProvider;
+
+StoreContextProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

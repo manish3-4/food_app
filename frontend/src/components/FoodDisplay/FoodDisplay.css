@@ -14,3 +14,19 @@
     gap: 30px;
     row-gap: 50px;
 }
+.cart-btn {
+  height: 6vh;
+  width: 20vw;
+  border: none;
+  font-size: max(2vw, 8px);
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f1571b;
+  border-radius: 5vw 3vh;
+  color: white;
+  margin: 2em auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
