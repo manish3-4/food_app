@@ -2,8 +2,7 @@ import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
 
-// Initialize Stripe with your secret key
-const stripe = new Stripe({password: process.env.STRIPE_SECRET_KEY});
+
 
 // Place the Order from the user from the Front end
 const placeOrder = async (req, res) => {
@@ -11,11 +10,16 @@ const placeOrder = async (req, res) => {
 
   try {
     const { userId, items, amount, address } = req.body;
+    if(amount < 50){
+      res.json({
+        error:"Minimum amount should be 50",
+      })
+    }
     const newOrder = new orderModel({ userId, items, amount, address });
     await newOrder.save();
-
+    
     await userModel.findByIdAndUpdate(userId, { cartData: {} });
-
+    
     const line_items = items.map((item) => ({
       price_data: {
         currency: "inr",
@@ -24,18 +28,27 @@ const placeOrder = async (req, res) => {
       },
       quantity: item.quantity,
     }));
-
+    
     line_items.push({
-      price_data: { currency: "inr", product_data: { name: "Delivery Charges" }, unit_amount: 200 },
+      price_data: {
+        currency: "inr",
+        product_data: { name: "Delivery Charges" },
+        unit_amount: 200,
+      },
       quantity: 1,
     });
+
+    const api = process.env.STRIPE_SECRET_KEY;
+    // console.log(api + typeof(api));
+
+    const stripe = new Stripe(api,);
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,  // Updated
-      cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,  // Updated
+      success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`, // Updated
+      cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`, // Updated
     });
 
     res.json({ success: true, session_url: session.url });
