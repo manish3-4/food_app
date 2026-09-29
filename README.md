@@ -9,9 +9,6 @@
   For Security reasons Please wait for 30 Second As the will have to load and estalish a realiable network.
 </h1>
 
-> 💻 **Live Project**: [Click here to explore SnapBite]()  
-> 🛠️ **Source Code**: [GitHub Repo](https://github.com/)
-
 ---
 
 ## 🌟 Key Features
